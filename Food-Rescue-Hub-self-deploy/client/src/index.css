@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: 0.75rem;
+  --background: oklch(0.99 0.01 100);
+  --foreground: oklch(0.24 0.04 155);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.04 155);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.04 155);
+  --primary: oklch(0.4 0.12 155);
+  --primary-foreground: oklch(0.98 0.02 100);
+  --secondary: oklch(0.96 0.02 155);
+  --secondary-foreground: oklch(0.35 0.08 155);
+  --muted: oklch(0.95 0.015 155);
+  --muted-foreground: oklch(0.52 0.03 155);
+  --accent: oklch(0.94 0.04 75);
+  --accent-foreground: oklch(0.35 0.08 75);
+  --destructive: oklch(0.6 0.18 25);
+  --destructive-foreground: oklch(0.98 0.02 100);
+  --border: oklch(0.9 0.03 155);
+  --input: oklch(0.9 0.03 155);
+  --ring: oklch(0.55 0.12 155);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; margin: 0; font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), [type="button"]:not(:disabled), [type="submit"]:not(:disabled), a[href], select:not(:disabled), input:not(:disabled), textarea:not(:disabled) { cursor: pointer; }
+}
+
+@layer components {
+  .font-display { font-family: "Fraunces", Georgia, serif; }
+  .eyebrow { @apply text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#e17e44]; }
+  .btn-lift { transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 180ms ease, background-color 180ms ease; }
+  .btn-lift:active { transform: scale(.97); }
+  .field-label { @apply mb-1.5 block text-[11px] font-extrabold uppercase tracking-[.12em] text-[#82978c]; }
+  .field-input { @apply h-11 w-full rounded-xl border border-[#dce8de] bg-white px-3 text-xs font-semibold text-[#315a4b] outline-none transition placeholder:text-[#abb9b0] focus:border-[#8db99a] focus:ring-2 focus:ring-[#dff0e2]; }
+}
+
+.pulse-dot { display: inline-block; animation: pulseDot 2s ease-in-out infinite; }
+.hero-card { animation: floatCard 7s ease-in-out infinite; }
+.hero-orbit { animation: floatCard 5s ease-in-out -1s infinite; }
+.map-grid { background-image: linear-gradient(rgba(99, 148, 101, .12) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 148, 101, .12) 1px, transparent 1px); background-size: 30px 30px; }
+.map-road { position: absolute; height: 8px; border-radius: 999px; background: rgba(255,255,255,.78); box-shadow: 0 0 0 2px rgba(177,209,174,.18); transform-origin: center; }
+.road-one { width: 120%; left: -12%; top: 37%; transform: rotate(-24deg); }
+.road-two { width: 120%; left: -8%; top: 58%; transform: rotate(20deg); }
+.road-three { width: 82%; left: 11%; top: 67%; transform: rotate(-48deg); }
+.map-river { position: absolute; left: 57%; top: -15%; height: 150%; width: 34px; border-radius: 50%; background: rgba(136, 197, 204, .28); transform: rotate(25deg); }
+.map-pin { transition: transform 180ms ease; }
+.qr-pattern { background: repeating-conic-gradient(#fff 0 25%, #173b2c 0 50%) 50% / 11px 11px; }
+
+@keyframes pulseDot { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,138,75,.45); } 50% { box-shadow: 0 0 0 5px rgba(239,138,75,0); } }
+@keyframes floatCard { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-7px) rotate(-1deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
+}
