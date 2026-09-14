@@ -283,9 +283,9 @@ function Landing({ onEnter }: { onEnter: (role: Role) => void }) {
       and supporting SDG 2 — Zero Hunger.
     </p>
 
- <p className="mt-5 text-sm font-bold text-[#0f6b45]">
-  Aadyadeep Sharma · XII A
-</p>
+    <p className="mt-5 text-sm font-bold text-[#0f6b45]">
+      Aadyadeep Sharma · XII A
+    </p>
 
     <p className="mt-4 text-xs text-[#769087]">
       © 2026 Food Rescue Hub · Designed for a hunger-free future
