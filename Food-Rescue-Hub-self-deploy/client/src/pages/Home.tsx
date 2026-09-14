@@ -292,6 +292,7 @@ function Landing({ onEnter }: { onEnter: (role: Role) => void }) {
     </p>
   </div>
 </footer>
+        </div>
   );
 }
 
