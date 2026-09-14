@@ -272,8 +272,26 @@ function Landing({ onEnter }: { onEnter: (role: Role) => void }) {
 
         <section className="border-t border-[#e6eee7] bg-[#f4f8f1] px-5 py-20"><div className="mx-auto max-w-5xl text-center"><div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#d9f0d7] text-[#0f6b45]"><Globe2 className="h-7 w-7" /></div><h2 className="mt-6 font-display text-3xl font-black tracking-tight text-[#173b2c] md:text-4xl">Built for SDG 2. Powered by community.</h2><p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#6d8379]">Every successful rescue contributes toward reducing food insecurity and food waste. That is how small handoffs become a movement.</p><div className="mt-9 grid gap-4 text-left sm:grid-cols-3"><Quote text="It turns the end of service into a beginning for someone else." author="Priya Nair · Green Leaf Restaurant" /><Quote text="The matching is clear, fast and respectful of our team’s time." author="Rohan Das · Hope Kitchen NGO" /><Quote text="I can see the impact of every pickup I make." author="Maya Singh · Volunteer" /></div></div></section>
       </main>
-      <footer className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#769087] sm:flex-row sm:items-center sm:justify-between lg:px-8"><Logo /><span>© 2026 Food Rescue Hub · Designed for a hunger-free future</span></footer>
-    </div>
+     <footer className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
+  <div className="rounded-3xl border border-[#dfeae1] bg-[#f7fbf7] p-8 text-center">
+    <h2 className="font-display text-2xl font-black text-[#173b2c]">
+      About the Creator
+    </h2>
+
+    <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#6d8379]">
+      Food Rescue Hub is a student-created project focused on reducing food waste
+      and supporting SDG 2 — Zero Hunger.
+    </p>
+
+    <p className="mt-5 text-sm font-bold text-[#0f6b45]">
+      Created by Giko ⚡
+    </p>
+
+    <p className="mt-4 text-xs text-[#769087]">
+      © 2026 Food Rescue Hub · Designed for a hunger-free future
+    </p>
+  </div>
+</footer>
   );
 }
 
